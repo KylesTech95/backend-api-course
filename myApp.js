@@ -1,4 +1,5 @@
 require('dotenv').config()
+let bodyParser = require('body-parser')
 let express = require('express');
 let app = express();
 // app.get("/",function(req,res){
@@ -49,6 +50,8 @@ app.get("/name", function(req,res){
     })
 })
 
+// Use body-parser to Parse POST Requests
+app.use(bodyParser.urlencoded({extended: true}))
 
 
 
