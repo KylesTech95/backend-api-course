@@ -58,7 +58,16 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 
 
+// Get Data from POST Requests
+app.post("/name",function(req,res){
+    var firstName = req.query.first
+    var lastName = req.query.last
+    var { first: firstName, last: lastName } = req.body;
 
+    res.json({
+        name: `${firstName} ${lastName}`
+    })
+})
 
 
 
