@@ -29,6 +29,14 @@ app.get('/now', function(req,res,next){
     res.send({time: req.time})
 })
 
+// build echo server
+app.get("/:word/echo", function(req,res){
+    let { word } = req.params
+    res.json({
+        echo: word
+    })
+    
+})
 
 
 
